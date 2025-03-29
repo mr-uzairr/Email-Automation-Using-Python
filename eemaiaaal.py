@@ -2,10 +2,7 @@ import smtplib
 import os
 email_id = os.environ.get("EMAIL_USER") 
 email_pass = os.environ.get("EMAIL_PASS")
-with smtplib.SMTP('smtp.gmail.com',587) as smtp:
-    smtp.ehlo()
-    smtp.starttls()
-    smtp.ehlo()
+with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
 
     # ehlo is an alternative to helo for services that support the smtp services extenstions
 
