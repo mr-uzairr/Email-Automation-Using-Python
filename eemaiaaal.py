@@ -4,11 +4,13 @@ import imghdr
 from email.message import EmailMessage
 email_id = os.environ.get("EMAIL_USER") 
 email_pass = os.environ.get("EMAIL_PASS")
+contacts = ['Receiver Email','Receiver Email']
 
 msg = EmailMessage()
 msg['Subject'] = 'Check out these images'
 msg['From'] = email_id
-msg['To'] = 'Receiver Email'
+#msg['To'] = 'Receiver Email'
+msg['To'] = ', '.join(contacts)
 msg.set_content("Image has been Attached !!")
 
 #files = ['Hello.jpg','Hello1.jpg']
